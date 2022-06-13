@@ -133,7 +133,17 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	return ""
+	arg1=arg1.split(" ")
+	products = []
+	x=0
+	for i in arg1:
+		for j in range(len(i)):
+			x += int(i[j])
+		products.append(x)
+		x=0
+
+	
+	return max(products)
 
 	# <QUESTION 5>
 
