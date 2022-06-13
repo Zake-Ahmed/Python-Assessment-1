@@ -35,7 +35,13 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
-	return ""
+	if len(input1) == len(input2):
+		return input1 + " " + input2
+	elif len(input1)>len(input2):
+		return input1
+	else:
+		return input2
+	
 	
 
 
@@ -65,7 +71,11 @@ def one(input1, input2):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
-	return ""
+	input = input.lower()
+	if input.count("bert") == 2:
+		return input.split("bert",2)[1]
+	else:
+		return ""
 
 
 
@@ -90,7 +100,14 @@ def two(input):
 	# No Hints for this question
 
 def three(arg1):
-	return ""
+	if arg1 % 3 == 0  and arg1 % 5 == 0:
+		return "fizzbuzz"
+	elif arg1 % 3 == 0:
+		return "fizz"
+	elif arg1 % 5 == 0:
+		return "buzz" 
+	else:
+		return "null"
 
 
 	# <QUESTION 4>
@@ -116,7 +133,17 @@ def three(arg1):
 	# help(int) for working with numbers and help(str) for working with Strings.
 
 def four(arg1):
-	return ""
+	arg1=arg1.split(" ")
+	products = []
+	x=0
+	for i in arg1:
+		for j in range(len(i)):
+			x += int(i[j])
+		products.append(x)
+		x=0
+
+	
+	return max(products)
 
 	# <QUESTION 5>
 
@@ -144,7 +171,19 @@ def four(arg1):
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return ""
+	input = input.split(",")
+	fileList = []
+	for i in range(0,len(input),4):
+		fileList.append(input[i:i+4])
+	nameList=[]
+	for i in fileList:
+		if i[2] == "False":
+			nameList.append(i[0])
+	final = []
+	for i in nameList:
+		if i not in final:
+			final.append(i)
+	return final
 
 	# <QUESTION 6>
 
@@ -165,7 +204,13 @@ def five(input):
 
 
 def six(input):
-	return ""
+	if "cei" in input:
+		return True
+	elif "c" not in input and "ie" in input:
+		return True
+	else:
+		return False
+
 	
 	
 		
@@ -187,7 +232,13 @@ def six(input):
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
 def seven(input): 
-	pass
+	input = input.lower()
+	vowel = ["a","e","i","o","u"]
+	count = 0 
+	for i in range(len(input)):
+		if input[i] in vowel:
+			count += 1
+	return count
    
 
 	# <QUESTION 8>
@@ -206,7 +257,10 @@ def seven(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-	return ""
+	x=1
+	for i in range(1,input+1):
+		x *= i
+	return x
 	
 
 	# <QUESTION 9>
@@ -228,7 +282,11 @@ def eight(input):
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-	return ""
+	inputString = inputString.replace(" ","")
+	for i in range(len(inputString)):
+		if inputString[i] == char:
+			return i+1
+	return -1
 
 
 	# <QUESTION 10>
@@ -248,5 +306,12 @@ def nine(inputString, char):
 
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
-def ten(string, int, char): 
-	return ""
+def ten(string, int1, char): 
+	string = string.lower()
+	string = string.replace(" ","")
+	if int1 > len(string):
+		return False
+	elif string[int1-1] == char:
+		return True
+	else:
+		return False
