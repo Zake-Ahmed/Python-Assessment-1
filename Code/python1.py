@@ -257,7 +257,10 @@ def seven(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-	return ""
+	x=1
+	for i in range(1,input+1):
+		x *= i
+	return x
 	
 
 	# <QUESTION 9>
