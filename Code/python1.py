@@ -232,7 +232,13 @@ def six(input):
 #    return ch.upper() in ['A', 'E', 'I', 'O', 'U'] 
 
 def seven(input): 
-	pass
+	input = input.lower()
+	vowel = ["a","e","i","o","u"]
+	count = 0 
+	for i in range(len(input)):
+		if input[i] in vowel:
+			count += 1
+	return count
    
 
 	# <QUESTION 8>
