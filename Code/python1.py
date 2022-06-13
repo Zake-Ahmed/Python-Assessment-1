@@ -171,7 +171,19 @@ def four(arg1):
 	# help(str) and help(list), you might also need to use a function that can create a list of numbers for you, try help(range).
 
 def five(input):
-	return ""
+	input = input.split(",")
+	fileList = []
+	for i in range(0,len(input),4):
+		fileList.append(input[i:i+4])
+	nameList=[]
+	for i in fileList:
+		if i[2] == "False":
+			nameList.append(i[0])
+	final = []
+	for i in nameList:
+		if i not in final:
+			final.append(i)
+	return final
 
 	# <QUESTION 6>
 
