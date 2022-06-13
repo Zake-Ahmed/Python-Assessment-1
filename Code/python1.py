@@ -204,7 +204,13 @@ def five(input):
 
 
 def six(input):
-	return ""
+	if "cei" in input:
+		return True
+	elif "c" not in input and "ie" in input:
+		return True
+	else:
+		return False
+
 	
 	
 		
